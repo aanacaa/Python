@@ -20,13 +20,31 @@ print(sub)
 
 listaargumentos = argumento.split("=")
 print((listaargumentos))
+url = “https://bytebank.com/cambio?moedaorigem=real&moedadestino=dolar”
 '''
 from ExtratorArgumentosURL import ExtratorArgumentosURL
-#url = "https://www.bytebank.com.br/cambio?moedaorigem=real&moedadestino=dolar&valor=700"
-url = None
+url = "https://bytebank.com/cambio?moedaorigem=moedadestino&moedadestino=dolar"
+#-- Aula Empty e none
+#url = None
 #url = ""
-
 #argumento = ExtratorArgumentosURL(url)
 #print(argumento)
 #APOS STATIC METHOD
-print(ExtratorArgumentosURL.urlEhValida(url))
+#print(ExtratorArgumentosURL.urlEhValida(url))
+
+
+#---- Aula extrai argumentos
+
+#index = url.find("moedadestino") + len("moedadestino") +1
+#substring = url[index:]
+#print(substring)
+
+
+argumentosUrl = ExtratorArgumentosURL(url)
+moedaOrigem, moedaDestino = argumentosUrl.extraiArgumentos()
+print(moedaOrigem, moedaDestino)
+
+
+
+
+
